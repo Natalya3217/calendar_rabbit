@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь</title>
+
+    <!--<script>
+        function loadPage() {
+            var d = new Date();
+            document.getElementById("data").textContent = d.toISOseparator();
+            var year = d.getFullYear();
+            var date1 = new Date(year,0,1,0,0,0,0);
+            var month = date1.getMonth();
+            while (year == date1.getFullYear) {
+                var monthDiv = document.getElementById("month" + date1.month);
+                var weekDay = date1.getDay();
+                var i=0;
+                while (i<weekDay) {
+                     monthDiv.getElementsByClassName("").item(i).textContent = "";
+                     i=i+1;
+                }
+                while (month == date1.month) {
+                    monthDiv.getElementsByClassName("").item(weekDay+date1.getDate-1).textContent = date1.getDate;
+                    date1 = date1.setDate(date1.getDate + 1);
+                    i=i+1;
+                }
+                while (i<7*6) {
+                    monthDiv.getElementsByClassName("").item(i).textContent = "";
+                    i=i+1;        
+                }
+            }
+            //alert("Загружено")
+        }
+    </script>-->
+
+    <style>
+        /* подключение шрифта */
+        @font-face {
+            font-family: Pompadur;
+            src: url(fonts/ofont.ru_Liana.ttf);
+            /* Путь к файлу со шрифтом */
+        }
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+        }
+
+        .header {
+            !background-color: brown;
+            position: relative; /*картинка поверх надписи*/
+        }
+
+        .header img {
+            width: 100%;
+        }
+
+        .separator {
+            width: 100%;
+            height: 50px;
+            background-image: url(https://klike.net/uploads/posts/2020-08/1596869758_37.jpg);
+            /* Путь к фоновому рисунку */
+            background-position: left bottom;
+            /* Положение фона */
+            background-repeat: repeat-x;
+            /* Повторяем фон по горизонтали */
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: rgb(246, 224, 202);
+        }
+
+        .month {
+            border: 1px solid #111;
+            border-radius: 3px;
+        }
+
+        .week {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            justify-items: center;
+
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            justify-items: center;
+        }
+
+        .week-holyday,
+        .days-holyday {
+            color: crimson;
+        }
+
+        .month h1 {
+            text-align: center;
+        }
+
+        .month:hover {
+            background-color: rgba(67, 179, 114, 0.096);
+        }
+
+        /* стиль надписи */
+        .font-fendiperst1 {
+            font-family: cursive;
+            font-size: 2vw;
+        }
+
+        .font-fendiperst2 {
+            font-size: 6vw;
+            color: crimson;
+        }
+
+        .font-fendiperst3 {
+            font-size: 3vw;
+        }
+
+        .font-fendiperst2,
+        .font-fendiperst3 {
+            font-family: Pompadur, 'Comic Sans MS', cursive;
+        }
+
+        .year {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 3vw;
+        }
+
+        .title {
+            position: absolute;
+            /*надпись поверх картинки*/
+            top: 10px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+
+<body onload="loadPage()">
+    <div class="header">
+        <img src="https://mobimg.b-cdn.net/v3/fetch/61/619e8c27f14bfde8c0332026e2c86a00.jpeg" alt="кролики">
+        <div class="title">
+            <p><span class="font-fendiperst1">cемейного </span> <span class="font-fendiperst2">Счастья</span><span
+                    class="font-fendiperst3"> и уюта </span><span class="size year">2023</span></p>
+        </div>
+    </div>
+    <div class="separator" id="data"></div>
+    <div class="calendar">
+        <div class="month">
+            <H1>Январь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month0">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="days-holyday">1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="days-holyday">7</div>
+                <div class="days-holyday">8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div class="days-holyday">14</div>
+                <div class="days-holyday">15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div class="days-holyday">21</div>
+                <div class="days-holyday">22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div class="days-holyday">28</div>
+                <div class="days-holyday">29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Февраль</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month1">
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="days-holyday">4</div>
+                <div class="days-holyday">5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div class="days-holyday">11</div>
+                <div class="days-holyday">12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div class="days-holyday">18</div>
+                <div class="days-holyday">19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="days-holyday">25</div>
+                <div class="days-holyday">26</div>
+                <div>27</div>
+                <div>28</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Март</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month2">
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="days-holyday">4</div>
+                <div class="days-holyday">5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div class="days-holyday">11</div>
+                <div class="days-holyday">12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div class="days-holyday">18</div>
+                <div class="days-holyday">19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="days-holyday">25</div>
+                <div class="days-holyday">26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Апрель</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="days-holyday">1</div>
+                <div class="days-holyday">2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div class="days-holyday">8</div>
+                <div class="days-holyday">9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div class="days-holyday">15</div>
+                <div class="days-holyday">16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div class="days-holyday">22</div>
+                <div class="days-holyday">23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div class="days-holyday">29</div>
+                <div class="days-holyday">30</div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Май</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month4">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div class="days-holyday">6</div>
+                <div class="days-holyday">7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div class="days-holyday">13</div>
+                <div class="days-holyday">14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div class="days-holyday">20</div>
+                <div class="days-holyday">21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div class="days-holyday">27</div>
+                <div class="days-holyday">28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Июнь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month5">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div class="days-holyday">3</div>
+                <div class="days-holyday">4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div class="days-holyday">10</div>
+                <div class="days-holyday">11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div class="days-holyday">17</div>
+                <div class="days-holyday">18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div class="days-holyday">24</div>
+                <div class="days-holyday">25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Июль</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month6">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="days-holyday">1</div>
+                <div class="days-holyday">2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div class="days-holyday">8</div>
+                <div class="days-holyday">9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div class="days-holyday">15</div>
+                <div class="days-holyday">16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div class="days-holyday">22</div>
+                <div class="days-holyday">23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div class="days-holyday">29</div>
+                <div class="days-holyday">30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Август</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month7">
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div class="days-holyday">5</div>
+                <div class="days-holyday">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div class="days-holyday">12</div>
+                <div class="days-holyday">13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div class="days-holyday">19</div>
+                <div class="days-holyday">20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div class="days-holyday">26</div>
+                <div class="days-holyday">27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Сентябрь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month8">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div class="days-holyday">2</div>
+                <div class="days-holyday">3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div class="days-holyday">9</div>
+                <div class="days-holyday">10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div class="days-holyday">16</div>
+                <div class="days-holyday">17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div class="days-holyday">23</div>
+                <div class="days-holyday">24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div class="days-holyday">30</div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Октябрь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month9">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="days-holyday">1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="days-holyday">7</div>
+                <div class="days-holyday">8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div class="days-holyday">14</div>
+                <div class="days-holyday">15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div class="days-holyday">21</div>
+                <div class="days-holyday">22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div class="days-holyday">28</div>
+                <div class="days-holyday">29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Ноябрь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month10">
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="days-holyday">4</div>
+                <div class="days-holyday">5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div class="days-holyday">11</div>
+                <div class="days-holyday">12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div class="days-holyday">18</div>
+                <div class="days-holyday">19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="days-holyday">25</div>
+                <div class="days-holyday">26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="month">
+            <H1>Декабрь</H1>
+            <br>
+            <div class="week">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div class="week-holyday">сб</div>
+                <div class="week-holyday">вс</div>
+            </div>
+            <br>
+            <div class="days" id="month11">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div class="days-holyday">2</div>
+                <div class="days-holyday">3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div class="days-holyday">9</div>
+                <div class="days-holyday">10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div class="days-holyday">16</div>
+                <div class="days-holyday">17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div class="days-holyday">23</div>
+                <div class="days-holyday">24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div class="days-holyday">30</div>
+                <div class="days-holyday">31</div>
+            </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+</body>
+
+</html>
