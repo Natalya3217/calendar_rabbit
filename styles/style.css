@@ -14,7 +14,8 @@
         }
 
         .header {
-            position: relative; /*картинка поверх надписи*/
+            position: relative;
+            /*картинка поверх надписи*/
         }
 
         .header img {
@@ -77,7 +78,7 @@
         /* стиль надписи */
         .font-fendiperst1 {
             font-family: cursive;
-            font-size: 4vw;
+            font-size: 5vw;
         }
 
         .font-fendiperst2 {
@@ -91,17 +92,17 @@
 
         .font-fendiperst2,
         .font-fendiperst3 {
-            font-family: Pompadur, 'Comic Sans MS', cursive;
+        font-family: Pompadur, 'Comic Sans MS', cursive;
         }
 
         .year {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 8vw;
+            font-size: 5vw;
         }
 
         .title {
             position: absolute;
             /*надпись поверх картинки*/
-            top: 0px;
-            left: 10px;
+            top: -5px;
+            left: 20px;
         }
