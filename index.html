@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
     <title>Календарь</title>
 
     <!--<script>
@@ -37,123 +38,15 @@
     </script>-->
 
     <style>
-        /* подключение шрифта */
-        @font-face {
-            font-family: Pompadur;
-            src: url(fonts/ofont.ru_Liana.ttf);
-            /* Путь к файлу со шрифтом */
-        }
 
-        * {
-            margin: 0;
-        }
-
-        body {
-            display: grid;
-        }
-
-        .header {
-            !background-color: brown;
-            position: relative; /*картинка поверх надписи*/
-        }
-
-        .header img {
-            width: 100%;
-        }
-
-        .separator {
-            width: 100%;
-            height: 50px;
-            background-image: url(https://klike.net/uploads/posts/2020-08/1596869758_37.jpg);
-            /* Путь к фоновому рисунку */
-            background-position: left bottom;
-            /* Положение фона */
-            background-repeat: repeat-x;
-            /* Повторяем фон по горизонтали */
-        }
-
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-            background-color: rgb(246, 224, 202);
-        }
-
-        .month {
-            border: 1px solid #111;
-            border-radius: 3px;
-        }
-
-        .week {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            justify-items: center;
-
-        }
-
-        .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            justify-items: center;
-        }
-
-        .week-holyday,
-        .days-holyday {
-            color: crimson;
-        }
-
-        .month h1 {
-            text-align: center;
-        }
-
-        .month:hover {
-            background-color: rgba(67, 179, 114, 0.096);
-        }
-
-        /* стиль надписи */
-        .font-fendiperst1 {
-            font-family: cursive;
-            font-size: 2vw;
-        }
-
-        .font-fendiperst2 {
-            font-size: 6vw;
-            color: crimson;
-        }
-
-        .font-fendiperst3 {
-            font-size: 3vw;
-        }
-
-        .font-fendiperst2,
-        .font-fendiperst3 {
-            font-family: Pompadur, 'Comic Sans MS', cursive;
-        }
-
-        .year {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 3vw;
-        }
-
-        .title {
-            position: absolute;
-            /*надпись поверх картинки*/
-            top: 10px;
-            left: 50px;
-        }
     </style>
 </head>
-
-
 <body onload="loadPage()">
     <div class="header">
         <img src="https://mobimg.b-cdn.net/v3/fetch/61/619e8c27f14bfde8c0332026e2c86a00.jpeg" alt="кролики">
         <div class="title">
-            <p><span class="font-fendiperst1">cемейного </span> <span class="font-fendiperst2">Счастья</span><span
-                    class="font-fendiperst3"> и уюта </span><span class="size year">2023</span></p>
+            <h1><span class="font-fendiperst1">cемейного </span><span class="font-fendiperst2">Cчастья</span><span
+                    class="font-fendiperst3"> и уюта </span><span class="size year">2023</span></h1>
         </div>
     </div>
     <div class="separator" id="data"></div>
